@@ -45,7 +45,7 @@ gulp.task('jsx', function() {
 
 // Sass
 gulp.task('sass', function() {
-  return gulp.src('./src/sass/main.scss')
+  return gulp.src('./src/styles/main.scss')
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass())
     .pipe(plugins.sourcemaps.write({includeContent: false}))
@@ -54,7 +54,7 @@ gulp.task('sass', function() {
       browsers: ['last 2 versions']
     }))
     .on('error', plugins.util.log)
-    .pipe(plugins.sourcemaps.write('.'))
+    .pipe(plugins.sourcemaps.write())
     .pipe(gulp.dest('./build/css'))
     .on('error', plugins.util.log);
 });
@@ -63,12 +63,12 @@ gulp.task('sass', function() {
 gulp.task('serve', ['browser-sync', 'jsx', 'sass'] , function(cb) {
 
   plugins.watch(
-    './src/sass/**/*.scss',
+    './src/styles/**/*.scss',
     {
       name: 'SASS'
     },
     function() {
-      gulp.start('sass');
+      runSequence('sass','style-guide');
     }
   );
 
@@ -78,7 +78,18 @@ gulp.task('serve', ['browser-sync', 'jsx', 'sass'] , function(cb) {
       name: 'JS'
     },
     function() {
+      // notes on gulp.start: http://stackoverflow.com/questions/21905875/gulp-run-is-deprecated-how-do-i-compose-tasks
       gulp.start('jsx');
+    }
+  );
+
+  plugins.watch(
+    ['./docs/style_guide/**/*.*', '!./docs/style_guide/out/**/*.*'],
+    {
+      name: 'STYLE_GUIDE'
+    },
+    function() {
+      gulp.start('style-guide');
     }
   );
 });
@@ -94,7 +105,7 @@ gulp.task('delete-build', function() {
 gulp.task('build', ['jsx', 'sass']);
 
 // Default
-gulp.task('default', ['serve']);
+gulp.task('default', ['delete-build', 'serve']);
 
 // Tests
 gulp.task('test', function(done) {
@@ -154,4 +165,28 @@ gulp.task('dist', function() {
     ['css', 'html', 'bundle'],
     'uglify'
   );
+});
+
+// DOCS TASKS
+//===============================================
+
+// Install rvm and then install hologram into the global rvm gemset. Bundler will find it.
+gulp.task('style-guide', ['style-guide:sass'], function () {
+  // Delete dir first because hologram has a bug where it'll keep nesting its outputs.
+  rimraf('./docs/style_guide/out', function(err) {
+    plugins.util.log(err);
+  });
+
+  return gulp.src('hologram_config.yml')
+    .pipe(plugins.hologram({bundler: true, logging: true}))
+    .on('error', plugins.util.log)
+});
+
+gulp.task('style-guide:sass', function () {
+  return gulp.src('./docs/style_guide/src/styles/main.scss')
+    .pipe(plugins.sourcemaps.init())
+    .on('error', plugins.util.log)
+    .pipe(plugins.sass())
+    .pipe(plugins.sourcemaps.write())
+    .pipe(gulp.dest('./docs/style_guide/doc_assets/static/css'))
 });

@@ -10,7 +10,6 @@ System.config({
 
 System.config({
   "map": {
-    "bootstrap": "github:twbs/bootstrap@3.3.1",
     "react": "npm:react@0.12.2",
     "github:jspm/nodelibs-buffer@0.1.0": {
       "buffer": "npm:buffer@3.0.1"
@@ -33,10 +32,6 @@ System.config({
     },
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
-    },
-    "github:twbs/bootstrap@3.3.1": {
-      "css": "github:systemjs/plugin-css@0.1.0",
-      "jquery": "github:components/jquery@2.1.3"
     },
     "npm:amdefine@0.1.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.0",

@@ -1,0 +1,37 @@
+// Basic Type Styles
+// --------------------------------------------------
+/*doc
+---
+title: Typography
+name: typography
+parent: 1foundation
+---
+<div class="sg-section">
+  <p class="sg-font src-heading">Montserrat, Helvetica, Arial, sans-serif;</p>
+  <p class="sg-font">'Source Sans Pro', Helvetica, Arial, sans-serif;</p>
+</div>
+*/
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  color: $src-less-dark;
+  font-family: $src-font-family-content;
+}
+
+.src-heading{
+  font-family: $src-font-family-heading;
+
+}
+
+.generated-info{
+  white-space: pre-wrap;
+  line-height: 18px;
+}
+
+.heavy-emphasis{
+  font-weight: 900;
+  text-decoration: underline;
+}
