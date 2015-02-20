@@ -2,30 +2,88 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title>Votein</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Willow</title>
+  <link rel="shortcut icon" href="build/assets/images/willow-logo-green-bg-no-text.png"/>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Montserrat' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="build/css/main.css"/>
 </head>
 <body>
-<!--
-  <Feed>
-    <ShowAddButton />
-    <FeedForm />
-    <FeedList>
-      <FeedItem />
-    </FeedList>
--->
+<div id="page-wrapper">
+  <nav id="sidebar-wrapper">
+    <div id="sidebar-scroll-container">
+      <div class="sidebar-profile">
+        <img alt="sidebar profile image" class="sidebar-profile-image" src="build/assets/images/man-profile-pic.jpg"/>
 
-<div class="jumbotron text-center">
-  <h2>Vote it</h2>
+        <div class="sidebar-profile-name">
+          Andy Nelson <i class="fa fa-chevron-down profile-icon"></i>
+        </div>
+      </div>
+      <section id="sidebar-main">
+        <h6>main</h6>
+        <ul>
+          <li>
+            <div><i class="fa fa-home"></i><span>Home</span></div>
+          </li>
+          <li>
+            <div><i class="fa fa-th-large"></i><span>Dashboard</span></div>
+          </li>
+          <li>
+            <div><i class="fa fa-briefcase"></i><span>Contracts</span></div>
+          </li>
+        </ul>
+      </section>
+      <section id="sidebar-admin">
+        <h6>main</h6>
+        <ul>
+          <li>
+            <div><i class="fa fa-home"></i><span>Home</span></div>
+          </li>
+          <li>
+            <div><i class="fa fa-th-large"></i><span>Dashboard</span></div>
+          </li>
+          <li>
+            <div><i class="fa fa-briefcase"></i><span>Contracts</span></div>
+          </li>
+        </ul>
+      </section>
+      <section id="sidebar-tags">
+        <h6>main</h6>
+        <ul>
+          <li>
+            <div><i class="fa fa-home"></i><span>Home</span></div>
+          </li>
+          <li>
+            <div><i class="fa fa-th-large"></i><span>Dashboard</span></div>
+          </li>
+          <li>
+            <div><i class="fa fa-briefcase"></i><span>Contracts</span></div>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </nav>
+  <header id="header-wrapper">
+    <span class="header-search">
+      <i class="fa fa-search search-icon header-icon"></i>
+      Search for contract, counterparty, or category
+    </span>
+    <span class="header-actions">
+      <span class="header-icon"><i class="fa fa-caret-square-o-down"></i></span>
+      <span class="header-icon"><i id="header-icon-calendar" class="fa fa-calendar"></i></span>
+      <span class="header-icon"><i class="fa fa-th"></i></span>
+    </span>
+  </header>
 </div>
-
-<div id="app"></div>
-
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 <script>
-  System.import('build/js/main');
+  //  System.import('build/js/main');
+
+  //<div id="app">
+  //remove me soon - i'm used for main.js
+  //</div>
 </script>
 </body>
 </html>

@@ -59,8 +59,15 @@ gulp.task('sass', function() {
     .on('error', plugins.util.log);
 });
 
+// Assets
+gulp.task('assets', function () {
+  return gulp.src('./src/assets/**/*.*')
+      .pipe(gulp.dest('./build/assets'))
+      .on('error', plugins.util.log);
+});
+
 // serve task
-gulp.task('serve', ['browser-sync', 'jsx', 'sass'] , function(cb) {
+gulp.task('serve', ['browser-sync', 'jsx', 'sass', 'assets'] , function(cb) {
 
   plugins.watch(
     './src/styles/**/*.scss',

@@ -5,7 +5,6 @@
 // - a styleguide
 // - a mobile-specific theme
 
-
 // Brand Colors
 // --------------------------------------------------
 
@@ -35,13 +34,17 @@ $src-even-brighter: $aquas !default;
 $src-more-bright: $sky-blue !default;
 $src-very-bright: $white !default;
 
-
 // Font
 // --------------------------------------------------
 
+$src-font-size-base: 16px !default;
 $src-font-family-heading: Montserrat, Helvetica, Arial, sans-serif !default;
 $src-font-family-content: 'Source Sans Pro', Helvetica, Arial, sans-serif !default;
 
-
 // Container
 // --------------------------------------------------
+
+// Responsive Viewing
+// --------------------------------------------------
+
+$src-screen-sm: 768px !default;

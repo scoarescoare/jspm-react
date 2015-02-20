@@ -69,7 +69,9 @@ $container-border-radius: 3px;
 
 $container-color: $src-less-dark;
 
-$container-size: $font-size-base * 1.14285714285714;
+@mixin container-font-size{
+  @include font-size(16px);
+}
 
 .panel {
   background: $src-very-bright;
@@ -77,8 +79,8 @@ $container-size: $font-size-base * 1.14285714285714;
   border-radius: $container-border-radius;
   border-width: 0;
 
-  @media screen and (min-width: $screen-tablet) {
-    font-size: ($container-size);
+  @include at-least-small-screen-styles {
+    @include container-font-size;
   }
 
   color: $container-color;
@@ -91,14 +93,14 @@ $container-size: $font-size-base * 1.14285714285714;
 
   @extend .text-uppercase;
 
-  @media screen and (min-width: $screen-tablet) {
+  @include at-least-small-screen-styles {
     @include container-padding;
     margin-bottom: 10px;
   }
 }
 
 .panel-body {
-  @media screen and (min-width: $screen-tablet) {
+  @include at-least-small-screen-styles {
     @include container-padding;
   }
 }
@@ -112,7 +114,6 @@ $container-size: $font-size-base * 1.14285714285714;
 
 // Popovers
 // --------------------------------------------------
-
 .popover {
   background: $src-very-bright;
   border: 1px solid rgba(0, 0, 0, 0.10);
@@ -131,9 +132,9 @@ $container-size: $font-size-base * 1.14285714285714;
 
   @extend .text-uppercase;
 
-  @media screen and (min-width: $screen-tablet) {
+  @include at-least-small-screen-styles {
     @include container-padding;
-    font-size: ($container-size);
+    @include container-font-size;
   }
 
   background: none;
@@ -147,13 +148,11 @@ $container-size: $font-size-base * 1.14285714285714;
 .popover-body {
   @extend .popover-content; // defined in bootstrap
 
-  @media screen and (min-width: $screen-tablet) {
+  @include at-least-small-screen-styles {
     @include container-padding;
-
-    font-size: ($container-size);
+    @include container-font-size;
   }
 }
-
 
 // ...
 // --------------------------------------------------
