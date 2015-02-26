@@ -21,6 +21,13 @@ $header-height: 68px;
     @include font-size(18px);
   }
 
+  .search-icon {
+    @include at-least-small-screen-styles {
+
+      margin-right: 12px;
+    }
+  }
+
   .header-actions {
     // allows us to push the icon to the right
     // http://stackoverflow.com/questions/19564287/css3-flex-pull-child-to-the-right
@@ -64,13 +71,6 @@ $header-height: 68px;
           &#header-icon-calendar {
             padding-bottom: 2px;
           }
-        }
-      }
-
-      .search-icon {
-        @include at-least-small-screen-styles {
-
-          margin-right: 12px;
         }
       }
     }
