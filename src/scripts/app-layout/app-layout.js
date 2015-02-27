@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Sidebar from './sidebar';
-import Header from './header';
+import Header from './header/header';
 
 export default
 class AppLayout extends React.Component {
