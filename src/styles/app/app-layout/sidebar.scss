@@ -95,18 +95,13 @@
 
           @include at-least-small-screen-styles {
             &:hover {
-              border-left: 6px solid $src-more-bright;
-
-              & > div {
-                margin-left: -6px;
-              }
+              box-shadow: inset 6px 0 $src-more-bright;
             }
 
             padding-top: 10px;
             padding-bottom: 10px;
           }
 
-          & > div {
 
             & > i, & > span {
               vertical-align: middle;
@@ -129,7 +124,6 @@
             }
           }
         }
-      }
     }
   }
 }
