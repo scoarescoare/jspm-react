@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import Sidebar from './sidebar';
+import Sidebar from './sidebar/sidebar';
 import Header from './header/header';
 
 export default

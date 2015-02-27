@@ -3,7 +3,7 @@
 import React from 'react';
 
 export default
-class HeaderActions extends React.Component {
+class HeaderNavSection extends React.Component {
 
   render() {
     return (

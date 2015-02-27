@@ -2,7 +2,7 @@
 
 import React from 'react';
 import HeaderSearch from './header-search';
-import HeaderActions from './header-actions';
+import HeaderNavSection from './header-nav-section';
 
 export default
 class Header extends React.Component {
@@ -11,7 +11,7 @@ class Header extends React.Component {
     return (
         <header id="header-wrapper">
           <HeaderSearch/>
-          <HeaderActions/>
+          <HeaderNavSection/>
         </header>
     );
   }
