@@ -2,6 +2,6 @@
 'use strict';
 
 import React from 'react';
-import Feed from './components/Feed';
+import AppLayout from './app-layout/app-layout';
 
-React.render(<Feed />, document.getElementById('app'));
+React.render(<AppLayout />, document.getElementById('app'));

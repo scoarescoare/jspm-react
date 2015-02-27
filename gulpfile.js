@@ -80,7 +80,7 @@ gulp.task('serve', ['browser-sync', 'jsx', 'sass', 'assets'] , function(cb) {
   );
 
   plugins.watch(
-    './src/js/**/*.js',
+    './src/scripts/**/*.js',
     {
       name: 'JS'
     },
