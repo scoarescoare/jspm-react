@@ -62,6 +62,8 @@ h2.styleguide {
   margin-right: -15px;
 
   padding-top: 80px;
+
+  text-transform: capitalize;
 }
 
 h3.styleguide {
@@ -69,10 +71,12 @@ h3.styleguide {
   @extend .sg-h2;
   margin-top: 60px;
   font-size: 31px;
+  text-transform: capitalize;
 }
 
 h4{
   margin: 15px auto;
+  text-transform: capitalize;
 }
 
 // FOOTER
