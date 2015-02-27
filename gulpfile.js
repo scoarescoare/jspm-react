@@ -37,10 +37,10 @@ gulp.task('browser-sync', function() {
 
 // JSX
 gulp.task('jsx', function() {
-  return gulp.src('src/**/*.js')
+  return gulp.src('src/scripts/**/*.js')
     .pipe(plugins.cached('jsx'))  //Process only changed files
     .pipe(plugins.react())
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('build/js'));
 });
 
 // Sass
